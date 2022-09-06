@@ -1,5 +1,5 @@
 {% set name = "TIES_MD" %}
-{% set version = "1.3" %}
+{% set version = "1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/UCL-CCS/TIES_MD/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 04f7a439793354a84c7538cc948ad40a7fffae9585a1f1d39ede9205bbbcf2b7
+  sha256: 7f9013a71183b3d736b74b084eacd0e686dc488ff5fe7f8ae0afbd48733fa117
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -48,8 +48,7 @@ test:
 
 about:
   home: https://github.com/UCL-CCS/TIES_MD
-  summary: 'Python package built on NAMD/OpenMM and OpenMMTools to perform binding free energy calculations
-   using the TIES protocol. '
+  summary: 'Python package built on NAMD/OpenMM and OpenMMTools to perform binding free energy calculations using the TIES protocol. '
   description: |
     TIES_MD allows for the automation of binding free energy calculations in NAMD and OpenMM following the
     TIES protocol.
