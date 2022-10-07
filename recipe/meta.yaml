@@ -1,5 +1,5 @@
 {% set name = "TIES_MD" %}
-{% set version = "1.3" %}
+{% set version = "1.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/UCL-CCS/TIES_MD/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 04f7a439793354a84c7538cc948ad40a7fffae9585a1f1d39ede9205bbbcf2b7
+  sha256: c400899027c3d5f9c66072ffab1984beb827696f161cbcb7790237579556472b
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -44,7 +44,7 @@ test:
     - pytest
   commands:
     - pip check
-    - python -c "import pytest; pytest.main(['./TIES_MD-{{ version }}/TIES_MD/tests'])"
+    - python -c "import site, os; os.chdir(os.path.join(site.getsitepackages()[0], 'TIES_MD', 'tests')); import run; run.main()"
 
 about:
   home: https://github.com/UCL-CCS/TIES_MD
