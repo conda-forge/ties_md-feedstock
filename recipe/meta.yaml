@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - ties_md = TIES_MD.cli:main
@@ -25,7 +25,7 @@ requirements:
     - python >=3.7
     - docopt
     - multiprocess
-    - numpy
+    - numpy <=1.23.5
     - openmm
     - pymbar =4.0.1
     - scipy
